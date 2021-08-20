@@ -1,0 +1,10 @@
+{
+    "quotes": [
+        { "id": "1", "quote": "Grandes poderes trazem grandes responsabilidades", "speaker": "Tio Ben" },
+        { "id": "2", "quote": "Acredito que há um herói dentro de todos nós que nos mantém íntegros, nos dá força, nos enobrece e por fim, deixa-nos morrer com dignidade. Mesmo que às vezes, seja preciso ser firme e desistir daquilo que mais queremos. Até dos nossos sonhos.", "speaker": "Peter Parker" },
+        { "id": "3", "quote": "Às vezes, combater o fogo com fogo não é a resposta.", "speaker": "Peter Parker" },
+        { "id": "4", "quote": "Eles não podem me prender. Eu sou o bom aqui.", "speaker": "Peter Parker" },
+        { "id": "5", "quote": "Embora eu não lembre … Mesmo que eu realmente não te conheça … Todo pedaço de instinto dentro de mim quer te separar, quer te acertar, quer te destruir!", "speaker": "Peter Parker" },
+        { "id": "6", "quote": "Se esse for o triunfo … eu odiaria ser derrotado.", "speaker": "Peter Parker" }
+    ]
+}
