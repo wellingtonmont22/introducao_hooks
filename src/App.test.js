@@ -24,7 +24,7 @@ test('renders the app with a button, a quote and a button', () => {
 
     const imageEl = screen.getByRole('img');
 
-    const textEl = screen.getByText(/Speaker/);
+    const textEl = screen.getByText(/loading speaker/);
 
     expect(buttonEl).toBeInTheDocument();
     expect(imageEl).toBeInTheDocument();
@@ -39,6 +39,14 @@ test('calls api on button click and update its text', async () => {
 
     fireEvent.click(buttonEl);
     //findByText é assincrono e getByText é para ser usando de forma sincrona;
+    const quoteEl = await screen.findByText(response.quote);
+
+    expect(quoteEl).toBeInTheDocument();
+});
+
+test('calls api on startup and renders it response', async () => {
+    render(<App />);
+
     const quoteEl = await screen.findByText(response.quote);
 
     expect(quoteEl).toBeInTheDocument();

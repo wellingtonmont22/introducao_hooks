@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import photo from "./assets/spiderman5.png";
 import { Quotes } from "./components";
 import { getQuote } from "./services/quotesService";
+import spiderSound from "./sounds/spider_man_web_shot.mp3";
+
+const audio = new Audio(spiderSound);
 
 const Content = styled.div`
   height: 100vh;
@@ -19,16 +22,31 @@ const Image = styled.img`
 `;
 
 const App = () => {
+  let isMounted = useRef(true);
+
   const [quoteState, setQuoteState] = useState({
-    quote: "ok",
-    speaker: "Speaker",
+    quote: "loading quote...",
+    speaker: "loading speaker...",
   });
 
   const onUpdate = async () => {
     const quote = await getQuote();
 
-    setQuoteState(quote);
+    if(isMounted.current){
+      audio.play();
+
+      setQuoteState(quote);
+    }
   };
+
+  useEffect(() => {
+    onUpdate();
+
+    return () => {
+      isMounted.current = false;
+    }
+  }, []);
+
   return (
     <Content>
       <Quotes
